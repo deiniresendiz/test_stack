@@ -29,12 +29,12 @@ def get_user(user_id):
 @api_v1.route('/posts/user/<user_id>', methods=['GET'])
 def get_posts_by_user(user_id):
     posts, status_code = api_posts_by_user(user_id)
-    Log.create('/user', 'GET', status_code)
+    Log.create('/posts/user', 'GET', status_code)
     return posts
 
 
 @api_v1.route('/photos/user/<user_id>', methods=['GET'])
 def get_photos_by_user(user_id):
     photos, status_code = api_photos_by_user(user_id)
-    Log.create('/user', 'GET', status_code)
+    Log.create('/posts/user', 'GET', status_code)
     return photos

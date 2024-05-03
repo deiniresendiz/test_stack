@@ -1,9 +1,11 @@
 from flask import Flask
+from flask_cors import CORS
 from .models import db
 from .models.log import Log
 from .views import api_v1
 
 app = Flask(__name__)
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 
 def create_app(environment):
